@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="">
+        <link rel="icon" href="Logo.jpg">
+        <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+        <title>Make It Snow Con3</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Chewy', cursive;
+                overflow-x: hidden;
+            }
+
+            header {
+                position: relative;
+                display: flex;
+               justify-content: space-between;
+                border-bottom: 1px solid black; 
+                padding: 5px; 
+                font-size: 30px;
+            }
+
+            .header-1 {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                min-height: 150vh;
+                background: linear-gradient(
+        rgba(238, 255, 249, 0.8),
+        rgba(130, 241, 247, 0.93) 49%, 
+        rgba(244, 116, 116, 0.94));
+    padding: 0 10%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    opacity: 0.9;
+    top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.9;
+    box-shadow:0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+    z-index: -1;
+        }
+
+        .header-1 h1  {
+            position: absolute;
+            top: 20px; 
+            transform: translateX(-50%);
+            left: 50%;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            border-bottom: 1px solid black;
+            padding: 15px;
+            }
+
+            .formContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.inputContainer {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.inputHolder {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-top: 10px;
+   
+    
+
+}
+
+.inputContainer h2 {
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.inputHolder input {
+    flex: 1 1 200px;
+    min-width: 0; 
+    font-family: 'Chewy', cursive;
+    border-radius: 40px;
+    padding: 10px 10px 10px 10px;
+    color: black;
+}
+
+input[type="text"]::placeholder,
+    input[type="date"]::placeholder {
+        color: rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
+
+    input[type="text"]:focus::placeholder,
+    input[type="date"]:focus::placeholder {
+        color: transparent;
+    }
+
+    select  {
+        flex: 1 1 200px;
+    min-width: 0; 
+    font-family: 'Chewy',  cursive;
+    border-radius: 40px;
+    padding: 10px 10px 10px 10px;
+    color: black;
+}
+
+.submitContainer {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    margin-top: 30%;
+  }
+
+.submitButton {
+    font-family: 'Chewy', cursive;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: #82F1F7;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.submitButton:hover {
+    background-color: #F47474;
+    transform: scale(1.05);
+}
+
+    
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <div class="header-1">
+                <h1>Let's make it Snowcon3 all summer long!</h1>
+            </div>
+        </header>
+
+        <div class="formContainer">
+            <div class="inputContainer">
+                <h2>Personal Information</h2>
+                <div class="inputHolder">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="What's your email?">
+                    <input type="tel" placeholder="Phone Number">
+                    <input type="text" placeholder="How old are you?">
+                </div>
+            </div>
+        
+            <div class="inputContainer">
+                <h2>Address</h2>
+                <div class="inputHolder"> 
+                    <input type="text" placeholder="Street Address">
+                    <input type="text" placeholder="City">
+                    <input type="text" placeholder="State/Province">
+                    <input type="text" placeholder="Zip/Postal Code">
+                </div>
+            </div>  
+        
+            <div class="inputContainer"> 
+                <h2>Availablity</h2>
+                <div class="inputHolder">
+                    <input type="text" placeholder="Mornings/Afternoons/Both">
+                    <input type="date" class="availableDays" placeholder="Days you are available">
+                    <input type="transportation" placeholder="Do you have transportation?">
+
+                    <select class="availableime">
+                        <option> Select available time</option>
+                      <option value="8AM-12PM">12 PM - 2 PM</option>
+                     <option value="12PM-4PM">12 PM - 4 PM</option>
+                     <option value="4PM-8PM">4 PM - 8 PM</option> 
+                     <option value="AllDay">All Day</option> 
+                    </select>
+
+                </div>
+            </div> 
+
+            <form id="applicationForm" class="formContainer">
+                <div class="submitContainer">
+                    <button type="submit" class="submitButton">Submit</button>
+                </div>
+            </form>
+
+                </div>
+
+           
+                <script>
+                    document.getElementById('applicationForm').addEventListener('submit', function(e) {
+                        e.preventDefault();
+
+                        // Collect form data
+                        const formData = new FormData(this);
+                        const formObject = Object.fromEntries(formData);
+                        
+                        // Display collected data to the user
+                        alert('Application submitted!\n\n' + JSON.stringify(formObject, null, 2));
+                        
+                        // Reset the form
+                        this.reset(); 
+                    });
+
+                    // Add event listener to the form submit button
+
+                    document.getElementById('applicationForm').addEventListener('submit'), function(e) {
+                        e.preventDefault();
+
+                        const formData = new FormData(this);
+                        const formObject = Object.fromEntries(formData);
+                    }
+
+                    const availableDaysInput = document.getElementById('availableDays');
+                    const selectedDays = new Set();
+
+                    availableDaysInput.addEventListener('change', function() {
+                        const selectedDays = new Date(this.value);
+                        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+                        if (selectedDays.has(dateString)) {
+                            selectedDays.delete(dateString);
+                        } else {
+                            selectedDays.add(dateString);
+                        }
+
+                        updateSelectedDays();
+                    });
+
+                    function updateSelectedDays() {
+                    const sortedDays = Array.from(selectedDays).sort();
+                    availableDaysInput.value = sortedDays.join(', ');
+                    }
+                    
+                </script>
+          
+           
+        
+    </body>
+
+</html>
