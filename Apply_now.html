@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="">
+        <link rel="icon" href="Logo.jpg">
+        <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+        <title>Make It Snow Con3</title>
+        <style>
+            body {
+                margin: -20px;
+                font-family: 'Chewy', cursive;
+                overflow-x: hidden;
+            }
+
+            header {
+                position: relative;
+                display: flex;
+               justify-content: space-between; 
+                padding: 5px; 
+                font-size: 30px;
+            }
+
+            .header-1 {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                min-height: 150vh;
+                background: linear-gradient(
+        rgba(238, 255, 249, 0.8),
+        rgba(130, 241, 247, 0.93) 49%, 
+        rgba(244, 116, 116, 0.94));
+    padding: 0 10%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    opacity: 0.9;
+    top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.9;
+    box-shadow:0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+    z-index: -1;
+        }
+
+        .header-1 h1  {
+            position: absolute;
+            top: 30px; 
+            transform: translateX(-50%);
+            left: 50%;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            padding: 15px;
+            }
+
+            .formContainer {
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 1000px;
+    
+}
+
+.inputContainer {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+.inputHolder {
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+    margin-top: 10px auto;
+   
+    
+
+}
+
+.inputHolder input, 
+.inputHolder select {
+    width: 100%;
+    flex: none;
+    min-width: 0;
+    font-family: 'Chewy', cursive;
+    border-radius: 40px;
+    padding: 8px;
+    color: black;
+}
+
+.inputContainer h2 {
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+
+
+input[type="text"]::placeholder {
+        color: rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
+
+    input[type="text"]:focus::placeholder {
+        color: transparent;
+    }
+
+    input[type="date"]:focus::before {
+        content: attr(data-placeholder);
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        color: rgba(0, 0, 0, 0.6);
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+      input[type="date"],
+      input[type="time"] {
+        width: 50%;
+    }
+
+    
+    
+
+.submitContainer {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 45%;
+    margin-top: 28%;
+    left: -43%;
+  }
+
+.submitButton {
+    font-family: 'Chewy', cursive;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: #82F1F7;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    }
+
+.submitButton:hover {
+    background-color: #F47474;
+    transform: scale(1.05);
+}
+
+.psnow {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+   z-index: 10;
+   font-size: 20px;
+}
+
+ video {
+    position: absolute;
+    bottom: -40%;
+    left: 23%;
+    width: 80%;
+    height: 80%;
+    z-index: -1;
+}
+
+.ppsnow {
+    position: absolute;
+    top: 60%;
+    left: 77%;
+    z-index: 10;
+    font-size: 25px;
+}
+
+.pppsnow {
+    position: absolute;
+    top: 70%;
+    left: 77%;
+    z-index: 10;
+    font-size: 20px;
+}
+ 
+
+    
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <div class="header-1">
+                <h1>Let's make it Snowcon3 all summer long!</h1>
+            </div>
+        </header>
+
+        <div class="formContainer">
+
+            
+            <div class="inputContainer">
+                <h2>Personal Information</h2>
+                <div class="inputHolder">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="What's your email?">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+            </div>
+        
+            <div class="inputContainer">
+                <h2>Location</h2>
+                <div class="inputHolder"> 
+                    <input type="text" placeholder="Address">
+                    <input type="text" placeholder="City">
+                    <input type="text" placeholder="State/Province">
+                    <input type="text" placeholder="Zip/Postal Code">
+                </div>
+            </div>  
+        
+            <div class="inputContainer"> 
+                <h2>Event Details</h2>
+                <div class="inputHolder">
+                    <input type="date" class="Eventdate" title="Event Date" data-placeholder="Event Date">
+                    <input type="time"  class="Eventtime" title="Event Time" data-placeholder="Event Time">
+                    <input type="details" class="Eventdetails" title="Event Details" placeholder="More details about the event">
+                </div>
+            </div> 
+
+            <form id="applicationForm" class="formContainer">
+                <div class="submitContainer">
+                    <button type="submit" class="submitButton">Submit</button>
+                </div>
+            </form>
+              </div>
+
+              <div class="psnow">
+                <p>Our snow cone business is dedicated to bringing refreshing, flavorful joy to customers of all ages. We specialize in serving premium, hand-crafted snow cones made with high-quality ingredients and an array of unique flavors, from classic fruity favorites to exotic blends that excite the palate. With an emphasis on customer satisfaction and creating memorable experiences, our team ensures each snow cone is packed with vibrant colors, bold tastes, and the perfect amount of ice. Ideal for summer festivals, community events, and private gatherings, our snow cones are a hit for any occasion. Whether it's a hot summer day or a cozy winter festival, we bring a chill to every event with delicious, icy treats!</p>
+              </div>
+
+              <div class="ppsnow">
+                <h2>Just want to chat?</h2>
+              </div>
+
+              <div class="pppsnow">
+                <p>For general inquiries, email us at <br> <u>makeitsnowcon3@gmail.com</u> or call (912)-373-6835</p>
+              </div>
+
+              <video autoplay loop muted>
+                <source src="Video 1.MOV" type="video/mp4">
+              </video>
+
+              
+
+           
+                <script>
+                    document.getElementById('applicationForm').addEventListener('submit', function(e) {
+                        e.preventDefault();
+
+                        // Collect form data
+                        const formData = new FormData(this);
+                        const formObject = Object.fromEntries(formData);
+                        
+                        // Display collected data to the user
+                        alert('Your request has been submitted!\n\n' + JSON.stringify(formObject, null, 2));
+                        
+                        // Reset the form
+                        this.reset(); 
+                    });
+
+
+                    const EventdateInput = document.getElementById('Eventdate');
+                    const selectedDays = new Set();
+
+                    EventdateInput.addEventListener('change', function() {
+                        const selectedDays = new Date(this.value);
+                        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+                        if (selectedDays.has(dateString)) {
+                            selectedDays.delete(dateString);
+                        } else {
+                            selectedDays.add(dateString);
+                        }
+
+                        updateSelectedDays();
+                    });
+
+                    function updateSelectedDays() {
+                    const sortedDays = Array.from(selectedDays).sort();
+                    EventdateInput.value = sortedDays.join(', ');
+                    }
+
+                    // Event Time selection
+
+                    const EventtimeInput = document.getElementById('Eventtime');
+                    const selectedTimes = new Set();
+
+                    EventtimeInput.addEventListener('change', function() {
+                        const selectedTime = this.value;
+
+                        if (selectedTimes.has(selectedTime)) {
+                            selectedTimes.delete(selectedTime);
+                        } else {
+                            selectedTimes.add(selectedTime);
+                        }
+                        updateSelectedTimes();
+                    });
+
+                    function updateSelectedTimes() {
+                        const sortedTimes = Array.from(selectedTimes).sort();
+                        EventtimeInput.value = sortedTimes.join(', ');
+                    }
+                    
+                    
+
+                    
+                </script>
+          
+           
+        
+    </body>
+
+</html>
